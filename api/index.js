@@ -1,10 +1,10 @@
 'use strict';
 
 let baseUrl = 'https://rickandmortyapi.com/api/character/';
-const addMore = document.querySelector('#more');
-const backdrop = document.querySelector('.backdrop');
-const closeBtn = document.querySelector('button[data-action="close-modal"]');
-const modal = document.querySelector('.modal-content');
+const addMore = document.querySelector('#more'),
+      backdrop = document.querySelector('.backdrop'),
+      closeBtn = document.querySelector('button[data-action="close-modal"]'),
+      modal = document.querySelector('.modal-content');
 
 const replaceUrl = function (data){
     const next = data.info.next;
@@ -47,9 +47,9 @@ const showMore = function(){
         .catch(err => {
             console.log(err);
         })
-}
+};
 
-function createChatacter(data){
+const createChatacter = function (data){
     const characters = data.results;
     const charactersList = characters.map(char => 
         `<div class="char-card">
@@ -67,7 +67,7 @@ addMore.addEventListener('click', function(){
     if (addMore.textContent === "Load more"){return};
 });
 
-function closeModal(e){
+const closeModal = function(e){
     const target = e.target;
     if(target.nodeName === 'BUTTON'){
         backdrop.classList.remove('show');
@@ -75,4 +75,4 @@ function closeModal(e){
     }
     
 }
-closeBtn.addEventListener('click', closeModal)
+closeBtn.addEventListener('click', closeModal);
