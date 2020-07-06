@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fizzbuzz = () => {
+            for (i = 0; i <= 100; i++){
+                if (i % 3 === 0  && i % 5 === 0) {
+                    console.log(i, ':fizzbuzz');
+                } else if (i % 5) {
+                    console.log(i, ':fizz');    
+                } else if (i % 3) {
+                    console.log(i, ':buzz');   
+                } else {
+                    console.log(i);
+                }
+            }
+        };
+
+        oddeven = () => {
+            for (i = 0; i <= 100; i++){
+                if(i % 2 === 0){
+                    console.log(i, 'odd');
+                    
+                } else {
+                    console.log(i, 'even');
+
+                }
+            }
+
+        }
+        function getSumOfDigits(int, total){
+    const totals = total;
+    const result = int.toString().split('').map(function(i){ return parseInt(i) }).reduce(function(acc, val) { return acc + val; });
+    if(result === totals){
+        return result;
+    } else {
+        return null;
+    }
+};
+    </script>
+</body>
+</html>

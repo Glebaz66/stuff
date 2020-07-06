@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div class="box1" style="border: 2px solid red;">
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui ipsa corporis cumque fugiat voluptate neque aperiam obcaecati voluptas exercitationem consequuntur accusamus mollitia sint maiores officia dolore, culpa enim, aliquam non.
+        </p>
+    </div>
+    <div class="box2"style="border: 2px solid green;"></div>
+
+    <script>
+        $(document).ready(function(){
+
+            $('body .box1').click(function(){
+                console.log(this);
+                $('.box1>p').detach().prependTo('.box2');
+            })
+
+        });
+    </script>
+</body>
+</html>

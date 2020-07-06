@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// const planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
+
+// function getPlanetById(id){
+//     let planetName;
+//     return planetName = planets[id - 1];
+// }
+
+function sum(int, total){
+    const totals = total;
+    const result = int.toString().split('').map(function(i){ return parseInt(i) }).reduce(function(acc, val) { return acc + val; });
+    console.log(`{$result}`);
+    if(int === totals){ console.log(result, total); };
+};
+
+    </script>
+</body>
+</html>

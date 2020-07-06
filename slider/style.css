@@ -1,0 +1,89 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-wrapper {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.dot {
+  border: solid black;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 50px;
+  background: #000;
+  -webkit-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+
+.dot:hover {
+  opacity: .5;
+}
+
+.dot-prev {
+  left: 30px;
+  position: absolute;
+  top: 50%;
+}
+
+.dot-next {
+  right: 30px;
+  position: absolute;
+  top: 50%;
+}
+
+.light {
+  color: white;
+}
+
+/*Select every element*/
+[id^="item"] {
+  display: none;
+}
+
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url("./flag-united-kingdom_1401-252.jpg");
+  background-size: cover;
+}
+
+.item-2 {
+  background: url("https://static.pexels.com/photos/6506/alcohol-bar-drinks-party-large.jpg");
+  background-size: cover;
+}
+
+.item-3 {
+  background: url("https://static.pexels.com/photos/6529/lake-kajak-kayak-large.jpg");
+  background-size: cover;
+}
+
+*:target ~ .item-1 {
+  opacity: 0;
+}
+
+#item-1:target ~ .item-1 {
+  opacity: 1;
+}
+
+#item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+  z-index: 3;
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */
