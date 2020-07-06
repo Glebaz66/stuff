@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .img-wrap {
+        padding: 30px; 
+        display: flex; 
+        justify-content: 
+        space-between; background: red;
+    }
+
+    img {
+        width: 30%;
+    }
+</style>
+<body>
+    <script>
+        // const images = ['https://picsum.photos/300/300?random=1', 'https://picsum.photos/300/300?random=2', 'https://picsum.photos/300/300?random=3']
+
+        const Gallery = {
+            //param number of pics u want to see
+            getImages: function () {
+                
+                const enterNumber = Number(prompt('Enter pics number'));
+                const images = [];
+                const https = 'https://picsum.photos/300/300?random=';
+                let c = 1;
+
+                 if (enterNumber > 0 || enterNumber <= 9) {
+                    for (i = 0; i < enterNumber; i++){
+                    images.push(`${https}${c}`);
+                    c++;
+                }
+                     
+                } else{
+                     console.error('wtf!! only number can be here');
+                }
+                
+                return images;
+            },
+
+            createImgWrap : function(){
+                const imageWrap = document.createElement('div');
+                const body = document.querySelector('body');
+                imageWrap.classList.add('img-wrap');
+                body.append(imageWrap);
+                return imageWrap;
+            },
+
+            createImg : function(){
+                images.forEach( (image) => {
+                    
+                    const img = document.createElement('img');
+                    img.setAttribute('src', image);
+                    document.querySelector('.img-wrap').append(img);
+                });
+            }
+        }
+        Gallery.getImages();
+        Gallery.createImgWrap();
+        Gallery.createImg();
+    </script>
+</body>
+</html>

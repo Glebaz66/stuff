@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form input {
+        margin-right: 40px;
+    }
+</style>
+<body>
+    <form class="form">
+        <input type="text">
+        <button type="submit">Generate</button>
+    </form>
+    <div class="result"></div>
+    <script>
+            
+
+        class Generator{
+            constructor(){
+                this.form = document.querySelector('.form');
+                this.input = document.querySelector('input[type=text]');
+                this.submit = this.form.querySelector('button[type=submit]');
+                this.submit.addEventListener('click', this.getText.bind(this), this.reset.bind(this));
+                // this.submit.addEventListener('click', this.reset.bind(this));
+            }
+
+            getText(e) {
+                e.preventDefault();
+                const value = this.input.value;
+                console.log(value);
+            }
+
+            reset(e){
+                if(e.target.className === 'BUTTON'){
+                    this.input.value = '';
+                    console.log(e);
+                    
+                }
+            }
+            
+            show(){
+            }
+        }
+
+        const g = new Generator('asdasd');
+        console.log(g);
+        
+    </script>
+</body>
+</html>

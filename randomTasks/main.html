@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .monster { background: purple }
+  </style>
+<body>
+    <script>
+        // make a trianlge
+        // #
+        // ##
+        // ###
+        // ####
+        function trinagle(num){
+            for(let i = '#'; i.length <= num; i += '#')
+            console.log(i);
+        }
+
+        //make chessboard
+        // # # # #
+        //  # # # #
+        // # # # #
+        //  # # # #   
+        function cheess(){
+        let size = 4;
+        let board ='';
+
+        for (let x = 0; x < size; x++) {
+            for (let y = 0; y < size; y++) {
+                if((x + y) % 2 == 0){
+                    board += ' ';
+                } else {
+                    board += '#';
+                }
+            }
+            board += '\n';
+        }
+        return console.log(board);
+    }
+
+    // function return min number
+
+    function min(a, b){
+        if(a < b){
+            return console.log(a);
+        } else
+        return console.log(b);
+    }
+
+    // is even
+
+    function isEven(num){
+        if(num % 2 === 0) {
+            return console.log(true);
+        }
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html {
+        min-height: 100vh;
+        background: radial-gradient( at calc(100% * var(--mouse-x, .5)) calc(100% * var(--mouse-y, .5)), transparent, #ff1313 80%) #2a42f9;
+            /* background: linear-gradient(calc(100% * var(--mouse-x, .5), green) calc(100% * var(--mouse-y, .5), red)); */
+    }
+
+    .box {
+        width: 300px; height: 300px;
+        border: 3px solid;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <script>
+    //gradient stuff
+        const root = document.documentElement;
+
+        document.addEventListener("mousemove", event => {
+            let x = event.clientX / innerWidth;
+            let y = event.clientY / innerHeight;
+
+            root.style.setProperty("--mouse-x", x);
+            root.style.setProperty("--mouse-y", y);
+        });
+    </script>
+    <script>
+        const box = Array.from(document.querySelectorAll('.box'));
+        const wrap =  document.querySelector('.wrap');
+        
+        function randoms(event) {
+
+            if(event.target.className !== 'box'){
+                return;
+            } 
+                
+            const red = Math.floor(Math.random() * 256),
+                    green = Math.floor(Math.random() * 256), 
+                    blue = Math.floor(Math.random() * 256), 
+                    alpha = (Math.random()).toFixed(2);
+
+            const color = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+            
+            box.forEach(b => {
+                let that = this;
+
+                console.log(that);
+                that.style.backgroundColor = color;                
+            });
+        };
+        
+        wrap.addEventListener('click', randoms);
+    </script>
+    <script>
+        const a = document.createElement('div');
+        a.classList.add('a');
+        document.querySelector('body').append(a);
+    </script>
+</body>
+</html>
