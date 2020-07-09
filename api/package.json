@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "scripts": "gulp scripts",
-    "up": "gulp watch && gulp sass && gulp copy && gulp scripts"
+    "up": "gulp watch && gulp sass && gulp copy-html && copy-img && uglify && gulp scripts"
   },
   "author": "glebaz666",
   "license": "ISC",
