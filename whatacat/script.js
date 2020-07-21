@@ -31,8 +31,14 @@ function getText() {
 
     const textMarkup = randomText;
     const txt = document.querySelector('.js-text');
-    txt.innerHTML = '<p>Here you go! Your' + ' ' + '<span class="bld">' + textMarkup + '</span>' + ' ' + 'cat</p>';
-    
+
+    const check = checkWindowWidth();
+    if(check <= 500){
+        txt.innerHTML = '<p>Here you go!</p>';
+        txt.innerHTML += '<p>Your <span class="bld">' + textMarkup + '</span>' + ' ' + 'cat</p>';
+    } else {
+        txt.innerHTML = '<p>Here you go! Your' + ' ' + '<span class="bld">' + textMarkup + '</span>' + ' ' + 'cat</p>';
+    }
 }
 
 function random(arr){
@@ -55,6 +61,11 @@ function checkCoordinates (){
     return false;
 }
 
+function checkWindowWidth() {
+    const winWidth = window.screen.width;
+    return winWidth;
+}
+
 function scrollAnimate() {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -68,8 +79,4 @@ function scrollAnimate() {
 
     }
 };
-
-
-
-// window.addEventListener('click', a);
 window.addEventListener('scroll', scrollAnimate);

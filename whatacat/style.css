@@ -59,12 +59,13 @@ body {
   font-size: 22px;
   padding: 10px 50px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #2f6627;
+  text-shadow: 0px 1px 0px transparent;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .section .controls button[type=button]:hover {
+  text-shadow: 0px 1px 0px #2f6627;
   background-color: #07ca00;
   -webkit-box-shadow: inset 0px 0px 2px #ff6666;
           box-shadow: inset 0px 0px 2px #ff6666;
@@ -113,6 +114,12 @@ body {
   height: auto;
 }
 
+@media screen and (max-width: 500px) {
+  .section .info-text {
+    text-align: center;
+  }
+}
+
 @-webkit-keyframes colorShadow {
   from {
     text-shadow: 1px 1px 1px red;
@@ -146,7 +153,7 @@ body {
   background: linear-gradient(90deg, red 0%, #0030ff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000",endColorstr="#0030ff",GradientType=1);
   width: 0%;
-  -webkit-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 /*# sourceMappingURL=style.css.map */
