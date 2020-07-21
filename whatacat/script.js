@@ -28,7 +28,6 @@ function getText() {
     
     
     const randomText = random(text);
-    console.log(randomText);
 
     const textMarkup = randomText;
     const txt = document.querySelector('.js-text');
@@ -41,3 +40,36 @@ function random(arr){
 }
 btn.addEventListener('click', getCat);
 btn.addEventListener('click', getText);
+
+// ===========================================
+// scroll
+
+const scrollBar = document.querySelector('.js-scroll-bar');
+const scrollBarContaine = document.querySelector('.progress-container');
+
+function checkCoordinates (){
+    const starCoordinate = document.documentElement.getBoundingClientRect(); 
+    if(starCoordinate.y === 0){
+        return true;
+    }
+    return false;
+}
+
+function scrollAnimate() {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    const check = checkCoordinates();
+    if(!check){
+        scrollBarContaine.style.display = 'block'; 
+        scrollBar.style.width = (winScroll / height) * 100 + '%';
+    } else {
+        scrollBarContaine.style.display = 'none';    
+
+    }
+};
+
+
+
+// window.addEventListener('click', a);
+window.addEventListener('scroll', scrollAnimate);
