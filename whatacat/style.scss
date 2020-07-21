@@ -9,7 +9,7 @@
     font-family: "OpenSans-Bold";
   
     src: url("./fonts/OpenSans-Bold.woff2") format("woff2");
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -21,11 +21,9 @@
 body {
     font-family: 'OpenSans-Regular', sans-serif;
 }
-.main-section {
-    padding: 15px 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+.section {
+    padding: 0 15px;
+    margin-bottom: 30px;
 
     .title {
         text-align: center;
@@ -71,14 +69,11 @@ body {
         justify-content: center;
         align-items: center;
         font-size: 25px;
-        width: 90%;
         margin: 0 auto;
         
-
         &-text{
             font-family: 'OpenSans-Bold', serif;
             margin-bottom: 10px;
-        
 
             .bld {
                 color: yellow;
@@ -106,4 +101,24 @@ body {
     to { 
         text-shadow: -1px 1px 1px rgba(255, 0, 0, 0.651);
     }  
+}
+
+.progress-container {
+    width: 110%;
+    height: 10px;
+    background: #ccc;
+    position: fixed;
+    bottom: 0;
+
+    display: none;
+}
+
+.progress-bar {
+    height: 10px;
+    background: -moz-linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(0,48,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(0,48,255,1) 100%);
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(0,48,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000",endColorstr="#0030ff",GradientType=1);
+    width: 0%;
+    transition: all 0.15s ease-in-out;
 }
