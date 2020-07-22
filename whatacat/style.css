@@ -23,9 +23,80 @@ body {
   font-family: 'OpenSans-Regular', sans-serif;
 }
 
+.btn-menu {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 5rem;
+  height: 84px;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 100;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-menu:focus {
+  outline: none;
+}
+
+.btn-menu:hover {
+  background: #ccc;
+  width: 6rem;
+  padding: 10px 20px;
+  border-bottom-right-radius: 50px;
+}
+
+.hovered {
+  background: #ccc;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-bottom-right-radius: 0 !important;
+  width: 6rem;
+  padding: 10px 20px;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 6rem;
+  height: 100vh;
+  padding: 10px;
+  position: fixed;
+  left: -10%;
+  background-color: #ccc;
+  border-top-right-radius: 50px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-item {
+  text-align: center;
+}
+
+.p-left {
+  padding-left: 15% !important;
+}
+
+.nav-open {
+  left: 0 !important;
+  border-top-right-radius: 0;
+}
+
 .section {
   padding: 0 15px;
   margin-bottom: 30px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .section .title {
@@ -144,6 +215,7 @@ body {
   background: #ccc;
   position: fixed;
   bottom: 0;
+  z-index: 100;
   display: none;
 }
 
@@ -155,5 +227,21 @@ body {
   width: 0%;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
+}
+
+@media screen and (max-width: 500px) {
+  .nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    width: 100%;
+    height: 84px;
+    left: -100%;
+    top: 0;
+    border-top-right-radius: unset;
+    padding-left: 20%;
+    padding-top: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

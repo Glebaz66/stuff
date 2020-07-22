@@ -21,9 +21,74 @@
 body {
     font-family: 'OpenSans-Regular', sans-serif;
 }
+.btn-menu {
+    position: sticky;
+    top: 0;
+    width: 5rem;
+    height: 84px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+
+    &:focus{
+        outline: none;
+    }
+
+    &:hover{
+        background: #ccc;
+        width: 6rem;
+        padding: 10px 20px;
+        border-bottom-right-radius: 50px;
+    }
+}
+
+.hovered {
+    background: #ccc;
+    transition: all 0.3s ease-in-out;
+    border-bottom-right-radius: 0 !important;
+    width: 6rem;
+    padding: 10px 20px;
+}
+.nav {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    width: 6rem;
+    height: 100vh;
+    padding: 10px;
+    position: fixed;
+    left: -10%;
+    background-color: #ccc;
+    border-top-right-radius: 50px;
+    transition: all 0.5s ease-in-out;
+    
+    // .icon{
+
+    // }
+
+    &-item {
+        text-align: center;
+        // &-link{
+
+        // }
+    }
+}
+
+.p-left {
+    padding-left: 15% !important;
+}
+
+.nav-open {
+    left: 0 !important;
+    border-top-right-radius: 0;
+}
 .section {
     padding: 0 15px;
     margin-bottom: 30px;
+    transition: all 0.5s ease-in-out;
 
     .title {
         text-align: center;
@@ -117,7 +182,7 @@ body {
     background: #ccc;
     position: fixed;
     bottom: 0;
-
+    z-index: 100;
     display: none;
 }
 
@@ -129,4 +194,17 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000",endColorstr="#0030ff",GradientType=1);
     width: 0%;
     transition: all 0.1s ease;
+}
+
+@media screen and (max-width:500px){
+    .nav {
+        flex-flow: row nowrap;
+        width: 100%;
+        height: 84px;
+        left: -100%;
+        top: 0;
+        border-top-right-radius: unset;
+        padding-left: 20%;
+        padding-top: 20px;
+    }
 }
