@@ -49,6 +49,20 @@ body {
   border-bottom-right-radius: 50px;
 }
 
+.btn-menu:hover svg.icon {
+  fill: black;
+}
+
+.btn-menu:active svg.icon {
+  fill: black;
+}
+
+.btn-menu svg.icon {
+  fill: rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
 .hovered {
   background: #ccc;
   -webkit-transition: all 0.3s ease-in-out;
@@ -84,12 +98,25 @@ body {
 }
 
 .p-left {
-  padding-left: 15% !important;
+  padding-left: 8rem !important;
+}
+
+@media screen and (max-width: 500px) {
+  .p-left {
+    padding: 0 15px;
+  }
 }
 
 .nav-open {
   left: 0 !important;
   border-top-right-radius: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .nav-open {
+    left: unset;
+    top: 0 !important;
+  }
 }
 
 .section {
@@ -230,6 +257,9 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+  .btn-menu:hover {
+    background: transparent;
+  }
   .nav {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -237,8 +267,8 @@ body {
             flex-flow: row nowrap;
     width: 100%;
     height: 84px;
-    left: -100%;
-    top: 0;
+    top: -100%;
+    left: 0;
     border-top-right-radius: unset;
     padding-left: 20%;
     padding-top: 20px;

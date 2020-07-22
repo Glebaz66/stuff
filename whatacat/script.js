@@ -66,9 +66,33 @@ window.addEventListener('scroll', scrollAnimate);
 // ==========================================
 // menu
 
+// const menuBtn = document.querySelector('.js-open-menu');
+// const menuBtnIcon = document.querySelector('.js-open-menu > svg.icon');
+// console.log(menuBtnIcon);
+// const nav = document.querySelector('.nav');
+// const section = document.querySelectorAll('.section');
+
+// const toggleMenu = function(e){
+//     const target = e.target;
+
+//     if(target.classList === menuBtn || target.classList === menuBtnIcon){
+//         nav.classList.toggle('nav-open');
+//         menuBtn.classList.toggle('hovered');
+//     }
+//     console.log(target);
+//     const checkWidth = checkWindowWidth();
+ 
+//     if(checkWidth >= 500) {
+//         if(nav){
+//             section.forEach(el => el.classList.toggle('p-left'));
+//         } 
+//     }
+// }
 const menuBtn = document.querySelector('.js-open-menu');
 
-const toggleMenu = function(){
+const toggleMenu = function(e){
+    e.stopPropagation();
+
     const nav = document.querySelector('.nav').classList.toggle('nav-open');
     menuBtn.classList.toggle('hovered');
     
@@ -83,9 +107,24 @@ const toggleMenu = function(){
     
         }
     }
+    console.log('toggle');
 }
+const body = document.querySelector('body');
 
+const closeMenu = function(e){
+    const target = e.target;
+    // other clicks close menu aswell
+    if(target !== menuBtn ){
+        const nav = document.querySelector('.nav').classList.remove('nav-open');
+        const section = document.querySelectorAll('.section');
+        section.forEach(el => el.classList.remove('p-left'));
+        menuBtn.classList.remove('hovered');
+    }
+    console.log('close');
+}
 menuBtn.addEventListener('click', toggleMenu);
+// menuBtnIcon.addEventListener('click', toggleMenu);
+body.addEventListener('click', closeMenu);
 
 // ====================================================
 //functions 
