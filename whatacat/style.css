@@ -94,7 +94,17 @@ body {
 }
 
 .nav-item {
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
   text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .p-left {
@@ -196,7 +206,7 @@ body {
   margin-bottom: 10px;
 }
 
-.section .info-text .bld {
+.section .info-text .txt-animated {
   color: yellow;
   text-shadow: 1px 1px 1px red;
   -webkit-animation: 0.5s linear 0s infinite alternate colorShadow;
@@ -204,7 +214,7 @@ body {
 }
 
 .section .info-img {
-  width: 70%;
+  max-width: 70%;
 }
 
 .section .info-img img {
