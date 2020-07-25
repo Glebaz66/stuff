@@ -34,14 +34,9 @@ const btn = document.querySelector('.js-btn'),
       txt = document.querySelector('.js-text'),
       img = document.querySelector('.js-img');
 
-
 function getPicture() {
-    
-
     let randomPicture = null;
-    
 
-        //   img.innerHTML = '';
     if(title.textContent === 'What a cat'){
         randomPicture = random(pics.cats);
     } 
@@ -54,6 +49,7 @@ function getPicture() {
     else if(title.textContent === 'Whats your animal today'){
         return;
     }
+
     const imgMarkup = `<img src="${randomPicture}">`;
     img.innerHTML = '';
 
@@ -111,9 +107,7 @@ function getText() {
         }
     }, 1500);
 }
-function clear(){
 
-}
 function random(arr){
     return arr[Math.floor(Math.random()*arr.length)];
 }
@@ -126,10 +120,6 @@ const catContent = document.querySelector('.nav-item[data-id="cat"]'),
 function changeAnimal(e){
     e.preventDefault();
     const target = e.target;
-
-    // let textMarkup = randomText;
-    let animal = null;
-
     
     txt.innerHTML = null;
     title.textContent = 'Selecting...';
@@ -162,7 +152,7 @@ btn.addEventListener('click', getText);
 const scrollBar = document.querySelector('.js-scroll-bar'),
       scrollBarContaine = document.querySelector('.progress-container');
 
-function scrollAnimate() {
+scrollAnimate = () => {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
@@ -182,7 +172,7 @@ window.addEventListener('scroll', scrollAnimate);
 
 const menuBtn = document.querySelector('.js-open-menu');
 
-const toggleMenu = function(e){
+toggleMenu = (e) =>{
     e.stopPropagation();
 
     const nav = document.querySelector('.nav').classList.toggle('nav-open');
@@ -224,7 +214,7 @@ body.addEventListener('click', closeMenu);
 // ====================================================
 //functions 
 
-function checkCoordinates (){
+checkCoordinates = () => {
     const starCoordinate = document.documentElement.getBoundingClientRect(); 
     if(starCoordinate.y === 0){
         return true;
@@ -237,3 +227,9 @@ function checkWindowWidth() {
     return winWidth;
 }
 
+class Fiend {
+    constructor(cols, rows){
+        this.cols = cols;
+        this.rows = rows;
+    }
+}
