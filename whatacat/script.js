@@ -226,10 +226,3 @@ function checkWindowWidth() {
     const winWidth = window.screen.width;
     return winWidth;
 }
-
-class Fiend {
-    constructor(cols, rows){
-        this.cols = cols;
-        this.rows = rows;
-    }
-}
